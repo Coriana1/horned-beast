@@ -1,7 +1,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/header';
-import React, { Component } from 'react';
+import React from 'react';
 import Main from './components/main';
 import Footer from './components/footer';
 import Data from './components/data.json';
