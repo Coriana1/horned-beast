@@ -1,5 +1,5 @@
 import React from 'react';
- import Image from 'react-bootstrap/Image';
+ import { Card } from 'react-bootstrap';
  class HornedBeast extends React.Component {
    constructor(props) {
      super(props);
@@ -11,15 +11,15 @@ import React from 'react';
      this.setState({
        likes: this.state.likes + 1
      })
+     this.props.display (this.props.title)
    }
    render() {
      return (
-
-       <div>
-       <h3>{this.props.beast.title}</h3>
-         <Image width="300px" src={this.props.beast.image_url} onClick={this.addClick} />
+        <Card onClick = {this.addClick}>
+        <h2>{this.props.title}</h2>
+         <Card.Img src={this.props.imageSrc} />
          <p>&hearts; {this.state.likes} </p>
-       </div>
+         </Card>
      )
    }
  }
