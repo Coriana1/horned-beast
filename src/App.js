@@ -1,11 +1,10 @@
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/header';
 import React from 'react';
-import Main from './components/main';
+import Main from './components/Main';
 import Footer from './components/footer';
 import Data from './components/data.json';
-import SelectedBeast from './components/SelectedBeast';
+import SelectedBeast from './components/Selectedbeast';
 
 class App extends React.Component {
   constructor(props) {
