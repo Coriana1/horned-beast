@@ -2,6 +2,31 @@ import React from 'react';
 import HornedBeast from './hornedbeast';
 import list from './data.json';
 import Results from './Results';
+import SelectedBeast from './SelectedBeast';
+import Form from 'react-bootstrap/Form';
+import '../main.css';
+
+ class Main extends React.Component{
+  constructor(props) {
+    super(props);
+     this.state = {
+      //  currentBeast: {image_url: null},
+      currentBeast:{}, 
+       currentBeastList: list, 
+       showModal: false
+     }
+   }
+handleFilterChange=(event)=>{
+  console.log(event.target.value);
+  const updatedBeastList = list.filter(beast=>beast.horns===parseInt(event.target.value));
+  this.setState({currentBeastList: updatedBeastList})
+}
+  //  handleOpenModal() {
+  //   this.setState({showModal: true});
+  //  }
+handleCloseModal=()=>{this.setState({showModal: false});}
+
+
 import SelectedBeast from './Selectedbeast';
 import Form from 'react-bootstrap/Form';
 import '../main.css';
@@ -22,13 +47,18 @@ import '../main.css';
   //  }
 handleCloseModal=()=>{this.setState({showModal: false});}
 
+
    selectCurrentBeast = (beast) => {
      this.setState({ currentBeast: beast, showModal: true });
    }
      render() {
       console.log (this.state.currentBeast)
       return (
+
+        <div className='container'>
+
         <div className ='container'>
+
         <Form>
          <Form.Group controlId="formHornFilter">
            <br></br>
@@ -50,8 +80,9 @@ handleCloseModal=()=>{this.setState({showModal: false});}
         />
         <div className='beast-container'>
         
-        {this.state.HornedBeast.map((beast,i)=><HornedBeast key={i} beast={beast} selectCurrentBeast={this.selectCurrentBeast}/>)}
-        
+
+        {this.state.currentBeastList.map((beast,i)=><HornedBeast key={i} beast={beast} selectCurrentBeast={this.selectCurrentBeast}/>)}
+
         </div>
          
          <Results currentBeast={this.state.currentBeast}/>
@@ -60,4 +91,9 @@ handleCloseModal=()=>{this.setState({showModal: false});}
          )
        }
    }
+
    export default Main
+
+
+
+
