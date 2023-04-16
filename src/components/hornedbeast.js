@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class HornedBeast extends React.Component {
     )
   }
 }
+
 export default HornedBeast;
 
 
@@ -81,3 +83,4 @@ export default HornedBeast;
 //    }
 //  }
 //  export default HornedBeast;
+

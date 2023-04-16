@@ -26,13 +26,39 @@ handleFilterChange=(event)=>{
   //  }
 handleCloseModal=()=>{this.setState({showModal: false});}
 
+
+import SelectedBeast from './Selectedbeast';
+import Form from 'react-bootstrap/Form';
+import '../main.css';
+
+ class Main extends React.Component{
+  constructor(props) {
+    super(props);
+     this.state = {
+      //  currentBeast: {image_url: null},
+      currentBeast:{}, 
+       HornedBeast: list, 
+       showModal: false
+     }
+   }
+
+  //  handleOpenModal() {
+  //   this.setState({showModal: true});
+  //  }
+handleCloseModal=()=>{this.setState({showModal: false});}
+
+
    selectCurrentBeast = (beast) => {
      this.setState({ currentBeast: beast, showModal: true });
    }
      render() {
       console.log (this.state.currentBeast)
       return (
+
         <div className='container'>
+
+        <div className ='container'>
+
         <Form>
          <Form.Group controlId="formHornFilter">
            <br></br>
@@ -54,8 +80,9 @@ handleCloseModal=()=>{this.setState({showModal: false});}
         />
         <div className='beast-container'>
         
+
         {this.state.currentBeastList.map((beast,i)=><HornedBeast key={i} beast={beast} selectCurrentBeast={this.selectCurrentBeast}/>)}
-        
+
         </div>
          
          <Results currentBeast={this.state.currentBeast}/>
@@ -64,8 +91,8 @@ handleCloseModal=()=>{this.setState({showModal: false});}
          )
        }
    }
-   export default Main
 
+   export default Main
 
 
 
