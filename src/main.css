@@ -1,7 +1,5 @@
 .container {
   border:10px solid darkblue;
-.container {
-  border:3px solid olive;
   display:flex;
   flex-direction: column;
   align-items: center;
